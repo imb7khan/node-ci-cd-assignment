@@ -14,13 +14,13 @@ Simple Todo app (Express + static `index.html`) that supports listing, adding, d
   6. Zip `dist/` and upload artifact `app-dist`
 
 ## CD (GitHub Actions, self-hosted runner)
-- Trigger: automatically after CI succeeds (`workflow_run`).
-- Runs on a **self-hosted runner** (your laptop).
+- Trigger: automatically after CI succeeds .
+- Runs on a **self-hosted runner**.
 - Steps:
   1. Download `app-dist` artifact from CI run
   2. Unzip to `deploy/`
   3. Install production dependencies (`npm ci --omit=dev`)
-  4. Start the app with `pm2` (keeps it running)
+  4. Start the app with `pm2` 
 - Environment variables are set in the workflow under `env:` (e.g., `PORT`, `APP_MESSAGE`).
 
 ## How to run locally
@@ -28,6 +28,3 @@ Simple Todo app (Express + static `index.html`) that supports listing, adding, d
 2. `npm start`
 3. Open `http://localhost:3000`
 
-## Submission
-- Public GitHub repo link: *paste your repo URL here*
-- This README explains CI & CD flows.
