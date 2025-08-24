@@ -25,14 +25,9 @@ jobs:
       - name: Test
         run: npm test
 
-      - name: Build
-        run: npm run build
-
       - name: Prepare artifact
         run: |
-          cd dist
-          zip -r ../app-dist.zip ./*
-          cd ..
+         zip -r app-dist.zip . -x "node_modules/*" ".git/*"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
